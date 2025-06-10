@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Navbar.css";
 import { Link } from "react-scroll";
 import Logo from "../../assets/logo/logo.png";
@@ -6,10 +6,34 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 function Navbar() {
+  /*Mobile menu state */
+  const [sidenav, setSidenav] = useState(false);
+
+  /*Desktop fixed menu */
+  const [sticky, setSticky] = useState(false);
+
+  /*mobile icon */
   const menuIcon = <FontAwesomeIcon icon={faBars} />;
 
+  /*Sidenav */
+  const sidenavShow=() => {
+  setSidenav(!sidenav);
+  }
+
+  /*Scroll fixed navbar */
+  useEffect(() => {
+    const handleScroll=() => {
+      setSticky(window.scrollY > 20);
+    }
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  })
+
   return (
-    <header id="site_header">
+    <>
+    <header id="site_header" className={`${sticky ? "sticky" : ""}`}>
       <div className="container">
         <nav className="navbar" id="Navbar">
           <div className="navbar_brand">
@@ -17,8 +41,8 @@ function Navbar() {
               <img src={Logo} alt="Logo" />
             </a>
           </div>
-          <div className="navbar_toggle">{menuIcon}</div>
-          <div className="menu_items">
+          <div className="navbar_toggle" onClick={sidenavShow}>{menuIcon}</div>
+          <div className={`menu_items ${sidenav ===true ? 'active' : ''}`}>
             <ul>
               <li>
                 <Link activeClass="active" to="home" spy={true} smooth={true}>
@@ -50,6 +74,8 @@ function Navbar() {
         </nav>
       </div>
     </header>
+    <div style={{height: "1000px"}}></div>
+    </>
   );
 }
 
