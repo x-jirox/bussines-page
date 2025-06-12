@@ -74,7 +74,7 @@ function Navbar() {
         </nav>
       </div>
     </header>
-    <div style={{height: "1000px"}}></div>
+  
     </>
   );
 }

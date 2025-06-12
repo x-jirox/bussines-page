@@ -91,8 +91,10 @@ a {
       outline-offset: 0px;
       border: none;
       cursor: pointer;
+      color: var(--white-color);
       background: var(--primary-color);
       transition: all .3s ease-in-out;
+
 
       &:hover {
           outline-offset: 10px;
@@ -144,6 +146,6 @@ h6 {
 
 p {
   font-size: 1rem;
-  color: var(--text-gray);
+  color: var(--font-color);
   line-height: 1.625rem;
 }
