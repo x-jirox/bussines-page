@@ -51,7 +51,11 @@ function Services() {
             <h4 className="number">02</h4>
             <div className="service_content">
               <h5>Business Strategy</h5>
-              <p>Business strategy services help organizations define their</p>
+              <p>
+                Business strategy services help organizations develop and
+                implement effective plans to achieve their goals, optimize
+                operations, and drive growth in a competitive market.
+              </p>
               <a href="/" className="read">
                 Read more
               </a>
@@ -64,7 +68,8 @@ function Services() {
               <h5>Reports Analysis</h5>
               <p>
                 Reports analysis services provide insights and recommendations
-                based on data analysis, helping businesses
+                based on data analysis, helping businesses make informed
+                decisions and improve performance.
               </p>
               <a href="/" className="read">
                 Read more
@@ -109,7 +114,7 @@ function Services() {
               <p>
                 Solution-focused services aim to address specific challenges
                 faced by businesses, providing tailored strategies and tools to
-                achieve desired outcomes.
+                achieve desired outcomes and drive success.
               </p>
               <a href="/" className="read">
                 Read more
